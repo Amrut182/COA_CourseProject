@@ -27,19 +27,31 @@ Project File Date:  10/06/2020
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'D:\arm-stuff\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-"booth_algo.s", line 15 (column 9): Warning: A1865W: '#' not seen before constant expression
-   15 00000000  MOV R1,A; Accumulator
+"booth_algo.s", line 17 (column 13): Warning: A1865W: '#' not seen before constant expression
+   17 00000000  and R5, R2, 1; Getting Q0 bit
+                           ^
+"booth_algo.s", line 18 (column 13): Warning: A1865W: '#' not seen before constant expression
+   18 00000004  and R6, R3, 1; Getting Q-1 bit 
+                           ^
+"booth_algo.s", line 19 (column 17): Warning: A1865W: '#' not seen before constant expression
+   19 00000008  MOV R7, R5, lsl 1; left shift, 'Q0'_'0'
+                               ^
+"booth_algo.s", line 24 (column 9): Warning: A1865W: '#' not seen before constant expression
+   24 00000012  MOV R1,A; Accumulator
                        ^
-"booth_algo.s", line 16 (column 9): Warning: A1865W: '#' not seen before constant expression
-   16 00000004  MOV R2,Q; Multiplier
+"booth_algo.s", line 25 (column 9): Warning: A1865W: '#' not seen before constant expression
+   25 00000016  MOV R2,Q; Multiplier
                        ^
-"booth_algo.s", line 17 (column 9): Warning: A1865W: '#' not seen before constant expression
-   17 00000008  MOV R3,q; Booth Bit
+"booth_algo.s", line 26 (column 9): Warning: A1865W: '#' not seen before constant expression
+   26 0000001a  MOV R3,q; Booth Bit
                        ^
-"booth_algo.s", line 18 (column 9): Warning: A1865W: '#' not seen before constant expression
-   18 0000000c  MOV R4, M; Mulitplicand
+"booth_algo.s", line 27 (column 9): Warning: A1865W: '#' not seen before constant expression
+   27 0000001e  MOV R4, M; Mulitplicand
                        ^
-0 Errors, 4 Warnings
+"booth_algo.s", line 29 (column 13): Warning: A1865W: '#' not seen before constant expression
+   29 00000026  add R8, R1, 1
+                           ^
+0 Errors, 8 Warnings
 assembling booth_algo.s...
 linking...
 .\Objects\booth.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
@@ -77,7 +89,7 @@ Package Vendor: Keil
       Include file:  Device\Include\LPC17xx.h
       Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\startup_LPC17xx.s
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
