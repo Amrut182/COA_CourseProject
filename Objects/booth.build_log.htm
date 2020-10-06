@@ -34,24 +34,59 @@ Build target 'Target 1'
    18 00000004  and R6, R3, 1; Getting Q-1 bit 
                            ^
 "booth_algo.s", line 19 (column 17): Warning: A1865W: '#' not seen before constant expression
-   19 00000008  MOV R7, R5, lsl 1; left shift, 'Q0'_'0'
+   19 00000008  MOV R5, R5, lsl 1; left shift, 'Q0'_'0'
                                ^
+"booth_algo.s", line 23 (column 14): Warning: A1865W: '#' not seen before constant expression
+   23 00000010  sub R7, R10, 1; x = n - 1  
+                            ^
 "booth_algo.s", line 24 (column 9): Warning: A1865W: '#' not seen before constant expression
-   24 00000012  MOV R1,A; Accumulator
+   24 00000014  MOV R8, 1; 1 value needed for next step
                        ^
-"booth_algo.s", line 25 (column 9): Warning: A1865W: '#' not seen before constant expression
-   25 00000016  MOV R2,Q; Multiplier
+"booth_algo.s", line 26 (column 17): Warning: A1865W: '#' not seen before constant expression
+   26 0000001c  MOV R2, R2, lsr 1; right shift Q
+                               ^
+"booth_algo.s", line 31 (column 9): Warning: A1865W: '#' not seen before constant expression
+   31 00000024  MOV R3, 1
                        ^
-"booth_algo.s", line 26 (column 9): Warning: A1865W: '#' not seen before constant expression
-   26 0000001a  MOV R3,q; Booth Bit
-                       ^
-"booth_algo.s", line 27 (column 9): Warning: A1865W: '#' not seen before constant expression
-   27 0000001e  MOV R4, M; Mulitplicand
-                       ^
-"booth_algo.s", line 29 (column 13): Warning: A1865W: '#' not seen before constant expression
-   29 00000026  add R8, R1, 1
+"booth_algo.s", line 34 (column 13): Warning: A1865W: '#' not seen before constant expression
+   34 0000002a  and R5, R1, 1; getting LSB of A
                            ^
-0 Errors, 8 Warnings
+"booth_algo.s", line 35 (column 17): Warning: A1865W: '#' not seen before constant expression
+   35 0000002e  MOV R1, R1, lsr 1
+                               ^
+"booth_algo.s", line 36 (column 9): Warning: A1865W: '#' not seen before constant expression
+   36 00000032  cmp R5, 1
+                       ^
+"booth_algo.s", line 39 (column 13): Warning: A1865W: '#' not seen before constant expression
+   39 00000036  add R9, PC, 4 
+                           ^
+"booth_algo.s", line 42 (column 13): Warning: A1865W: '#' not seen before constant expression
+   42 0000003e  and R5, R6, 1; getting LSB of Q
+                           ^
+"booth_algo.s", line 43 (column 9): Warning: A1865W: '#' not seen before constant expression
+   43 00000042  MOV R9, 0
+                       ^
+"booth_algo.s", line 48 (column 17): Warning: A1865W: '#' not seen before constant expression
+   48 00000050  MOV R1, R1, lsl 1
+                               ^
+"booth_algo.s", line 53 (column 9): Warning: A1865W: '#' not seen before constant expression
+   53 00000058  MOV R1,A; Accumulator
+                       ^
+"booth_algo.s", line 54 (column 9): Warning: A1865W: '#' not seen before constant expression
+   54 0000005c  MOV R2,Q; Multiplier
+                       ^
+"booth_algo.s", line 55 (column 9): Warning: A1865W: '#' not seen before constant expression
+   55 00000060  MOV R3,q; Booth Bit
+                       ^
+"booth_algo.s", line 56 (column 9): Warning: A1865W: '#' not seen before constant expression
+   56 00000064  MOV R4, M; Mulitplicand
+                       ^
+"booth_algo.s", line 57 (column 10): Warning: A1865W: '#' not seen before constant expression
+   57 00000068  MOV R10, N; Count
+                        ^
+"booth_algo.s", line 44: Warning: A1609W: MOV <rd>,pc instruction does not set bit zero, so does not create a return address
+   44 00000046  MOV R9, PC
+0 Errors, 20 Warnings
 assembling booth_algo.s...
 linking...
 .\Objects\booth.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
@@ -89,7 +124,7 @@ Package Vendor: Keil
       Include file:  Device\Include\LPC17xx.h
       Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\startup_LPC17xx.s
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
