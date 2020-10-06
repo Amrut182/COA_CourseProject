@@ -1,0 +1,88 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Biju Amruta Dathan, Indian Institute of Technology. Dharwad, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.31.0.0
+Toolchain Path:  D:\arm-stuff\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DARMP1.DLL V1.27.0.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TARMP1.DLL V1.26.0.0
+ 
+<h2>Project:</h2>
+D:\ARM_CODE\New folder\courseProj\booth.uvprojx
+Project File Date:  10/06/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'D:\arm-stuff\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+"booth_algo.s", line 13 (column 9): Warning: A1865W: '#' not seen before constant expression
+   13 00000000  MOV R3,A
+                       ^
+"booth_algo.s", line 14 (column 9): Warning: A1865W: '#' not seen before constant expression
+   14 00000004  MOV R1,M
+                       ^
+"booth_algo.s", line 15 (column 9): Warning: A1865W: '#' not seen before constant expression
+   15 00000008  MOV R2,Q
+                       ^
+"booth_algo.s", line 16 (column 9): Warning: A1865W: '#' not seen before constant expression
+   16 0000000c  MOV R4,N
+                       ^
+"booth_algo.s", line 17 (column 9): Warning: A1865W: '#' not seen before constant expression
+   17 00000010  MOV R7, 0x00001010
+                       ^
+"booth_algo.s", line 22: Warning: A1581W: Added 2 bytes of padding at address 0x22
+   22 00000024  END
+0 Errors, 6 Warnings
+assembling booth_algo.s...
+linking...
+.\Objects\booth.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+Program Size: Code=564 RO-data=204 RW-data=0 ZI-data=512  
+Finished: 0 information, 1 warning and 0 error messages.
+FromELF: creating hex file...
+".\Objects\booth.axf" - 0 Error(s), 1 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.LPC1700_DFP.2.6.0.pack
+                Keil.LPC1700_DFP.2.6.0
+                NXP LPC1700 Series Device Support, Drivers and Examples for MCB1700 and LPC1788-32
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\LPC1768
+  .\RTE\_Target_1
+  D:\arm-stuff\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  D:\arm-stuff\Keil\LPC1700_DFP\2.6.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\system_LPC17xx.c
+      Include file:  Device\Include\LPC17xx.h
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\startup_LPC17xx.s
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
