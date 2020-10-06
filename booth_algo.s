@@ -19,52 +19,12 @@ getTwoBit
 	MOV R5, R5, lsl 1; left shift, 'Q0'_'0'
 	add R5, R5, R6; 'Q0'_'Q-1'(got 2 bits as 1)	
 	BX LR
-label1
-	sub R7, R10, 1; x = n - 1  
-	MOV R8, 1; 1 value needed for next step
-	MOV R5, R8, lsl R7; 1000
-	MOV R2, R2, lsr 1; right shift Q
-	add R2, R2, R5; right shifted Q + 1000  
-	;BX LR
-	MOV PC, R9
-label2
-	MOV R3, 1
-	MOV PC, R9
-	
-label3
-	MOV R2, R2, lsr 1; right shift Q
-	MOV PC, R9
-
-label4
-	MOV R3, 0
-	MOV PC, R9
 AQq
-	and R5, R1, 1; getting LSB of A
-	MOV R1, R1, lsr 1
-	cmp R5, 1
-	MOV R6, R2; temp Q, for next steps lsb...
-	;stmfd sp!, {list of registers }
-	add R9, PC, 4 
-	beq label1
-	add R9, PC, 4 
-	bne label3
-	
-	add R1, R1, R5
-	and R5, R6, 1; getting LSB of Q
-	cmp R5, 1
-	MOV R9, 0
-	MOV R9, PC
-	beq label2
-	MOV R9, PC
-	bne label4
-	;debug
-	MOV R1, R1, lsl R10
-	add R1, R1, R2
-	MOV R1, R1, lsl 1
-	add R1, R1, R3
-	;
-	BX LR
-
+	add R6, R10, 1; n+1
+	MOV R8, R1, lsl R6; ls A by n+1
+	MOV R9, R2, lsl 1; ls Q by 1
+	add R7, R8, R9; A' = A append Q
+	add R7, R7, R3; A'' = q + A' = AQq
 ; A = A - M
 ylabel
 	MVN R4, R4
