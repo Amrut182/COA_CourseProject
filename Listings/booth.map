@@ -97,7 +97,7 @@ Image Symbol Table
     system_LPC17xx.c                         0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
     RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
     .text                                    0x000000cc   Section       52  startup_lpc17xx.o(.text)
-    P01                                      0x00000100   Section      100  booth_algo.o(P01)
+    P01                                      0x00000100   Section      108  booth_algo.o(P01)
     .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
     Stack_Mem                                0x10000000   Data         512  startup_lpc17xx.o(STACK)
     STACK                                    0x10000000   Section      512  startup_lpc17xx.o(STACK)
@@ -157,7 +157,7 @@ Image Symbol Table
     USBActivity_IRQHandler                   0x000000e3   Thumb Code     0  startup_lpc17xx.o(.text)
     USB_IRQHandler                           0x000000e3   Thumb Code     0  startup_lpc17xx.o(.text)
     WDT_IRQHandler                           0x000000e3   Thumb Code     0  startup_lpc17xx.o(.text)
-    __START                                  0x00000133   Thumb Code     0  booth_algo.o(P01)
+    __START                                  0x0000013b   Thumb Code     0  booth_algo.o(P01)
 
 
 
@@ -175,8 +175,8 @@ Memory Map of the image
 
     0x00000000   0x00000000   0x000000cc   Data   RO            9    RESET               startup_lpc17xx.o
     0x000000cc   0x000000cc   0x00000034   Code   RO           11    .text               startup_lpc17xx.o
-    0x00000100   0x00000100   0x00000064   Code   RO            2  * P01                 booth_algo.o
-    0x00000164   0x00000164   0x00000198   PAD
+    0x00000100   0x00000100   0x0000006c   Code   RO            2  * P01                 booth_algo.o
+    0x0000016c   0x0000016c   0x00000190   PAD
     0x000002fc   0x000002fc   0x00000004   Code   RO           10    .ARM.__at_0x02FC    startup_lpc17xx.o
 
 
@@ -201,13 +201,13 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       100          0          0          0          0        252   booth_algo.o
+       108          0          0          0          0        256   booth_algo.o
         56         22        204          0        512        948   startup_lpc17xx.o
 
     ----------------------------------------------------------------------
-       564         22        204          0        512       1200   Object Totals
+       564         22        204          0        512       1204   Object Totals
          0          0          0          0          0          0   (incl. Generated)
-       408          0          0          0          0          0   (incl. Padding)
+       400          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
          0          0          0          0          0          0   Library Totals
@@ -220,8 +220,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       564         22        204          0        512       1200   Grand Totals
-       564         22        204          0        512       1200   ELF Image Totals
+       564         22        204          0        512       1204   Grand Totals
+       564         22        204          0        512       1204   ELF Image Totals
        564         22        204          0          0          0   ROM Totals
 
 ==============================================================================
