@@ -28,13 +28,13 @@ Project File Date:  10/06/2020
 *** Using Compiler 'V6.14', folder: 'D:\arm-stuff\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
 "booth_algo.s", line 17 (column 13): Warning: A1865W: '#' not seen before constant expression
-   17 00000000  and R5, R2, 1; Getting Q0 bit
+   17 00000000  and R5, R2, 1; Getting Q0 bit 1010 & 0001
                            ^
 "booth_algo.s", line 18 (column 13): Warning: A1865W: '#' not seen before constant expression
    18 00000004  and R6, R3, 1; Getting Q-1 bit 
                            ^
 "booth_algo.s", line 19 (column 17): Warning: A1865W: '#' not seen before constant expression
-   19 00000008  MOV R5, R5, lsl 1; left shift, 'Q0'_'0'
+   19 00000008  MOV R5, R5, lsl 1; left shift, 'Q0'_'0'  
                                ^
 "booth_algo.s", line 24 (column 14): Warning: A1865W: '#' not seen before constant expression
    24 00000010  add R6, R10, 1; n+1
@@ -45,55 +45,82 @@ Build target 'Target 1'
 "booth_algo.s", line 31 (column 17): Warning: A1865W: '#' not seen before constant expression
    31 00000024  MOV R7, R7, asr 1; Shifted AQq to right
                                ^
-"booth_algo.s", line 39 (column 13): Warning: A1865W: '#' not seen before constant expression
-   39 0000002e  add R4, R4, 1
+"booth_algo.s", line 36 (column 17): Warning: A1865W: '#' not seen before constant expression
+   36 0000002e  MOV R9, R9, lsr 1; 
+                               ^
+"booth_algo.s", line 38 (column 9): Warning: A1865W: '#' not seen before constant expression
+   38 00000032  MOV R5, 1; we need value 1 in register for next step
+                       ^
+"booth_algo.s", line 40 (column 13): Warning: A1865W: '#' not seen before constant expression
+   40 0000003a  sub R5, R5, 1; (1 << bits - 1);  1111
                            ^
-"booth_algo.s", line 48 (column 9): Warning: A1865W: '#' not seen before constant expression
-   48 0000003a  MOV R9, 1; we need value 1 in register for next step
+"booth_algo.s", line 52 (column 14): Warning: A1865W: '#' not seen before constant expression
+   52 0000004e  add R6, R10, 1
+                            ^
+"booth_algo.s", line 53 (column 9): Warning: A1865W: '#' not seen before constant expression
+   53 00000052  MOV R9, 1; we need value 1 in register for next step
                        ^
-"booth_algo.s", line 50 (column 13): Warning: A1865W: '#' not seen before constant expression
-   50 00000042  sub R9, R9, 1; (1 << bits - 1)
+"booth_algo.s", line 55 (column 13): Warning: A1865W: '#' not seen before constant expression
+   55 0000005a  sub R9, R9, 1; (1 << bits - 1)  1111
                            ^
-"booth_algo.s", line 60 (column 9): Warning: A1865W: '#' not seen before constant expression
-   60 0000004e  MOV R1,A; Accumulator
-                       ^
-"booth_algo.s", line 67 (column 9): Warning: A1865W: '#' not seen before constant expression
-   67 00000052  MOV R2, Q; Multiplier (-ve)
-                       ^
-"booth_algo.s", line 68 (column 9): Warning: A1865W: '#' not seen before constant expression
-   68 00000056  MOV R3,q; Booth Bit
-                       ^
-"booth_algo.s", line 69 (column 9): Warning: A1865W: '#' not seen before constant expression
-   69 0000005a  MOV R4, M; Mulitplicand
-                       ^
-"booth_algo.s", line 70 (column 10): Warning: A1865W: '#' not seen before constant expression
-   70 0000005e  MOV R10, N; Count
-                        ^
-"booth_algo.s", line 74 (column 9): Warning: A1865W: '#' not seen before constant expression
-   74 00000062  cmp R1, 0
-                       ^
-"booth_algo.s", line 75 (column 13): Warning: A1865W: '#' not seen before constant expression
-   75 00000064  add R5, PC, 2; gettin address of next instruction pointer
+"booth_algo.s", line 57 (column 13): Warning: A1865W: '#' not seen before constant expression
+   57 00000062  add R4, R4, 1
                            ^
-"booth_algo.s", line 78 (column 9): Warning: A1865W: '#' not seen before constant expression
-   78 0000006a  cmp R2, 0
+"booth_algo.s", line 65 (column 9): Warning: A1865W: '#' not seen before constant expression
+   65 0000006e  MOV R9, 1; we need value 1 in register for next step
                        ^
-"booth_algo.s", line 79 (column 13): Warning: A1865W: '#' not seen before constant expression
-   79 0000006c  add R5, PC, 2
+"booth_algo.s", line 67 (column 13): Warning: A1865W: '#' not seen before constant expression
+   67 00000076  sub R9, R9, 1; (1 << bits - 1)  1111
                            ^
-"booth_algo.s", line 84 (column 9): Warning: A1865W: '#' not seen before constant expression
-   84 00000076  cmp R5, y; r5 is Qo_Q-1
+"booth_algo.s", line 72 (column 13): Warning: A1865W: '#' not seen before constant expression
+   72 00000084  add R8, R8, 1
+                           ^
+"booth_algo.s", line 79 (column 9): Warning: A1865W: '#' not seen before constant expression
+   79 0000008a  MOV R1,A; Accumulator
+                       ^
+"booth_algo.s", line 86 (column 9): Warning: A1865W: '#' not seen before constant expression
+   86 0000008e  MOV R2, Q; Multiplier (-ve)
                        ^
 "booth_algo.s", line 87 (column 9): Warning: A1865W: '#' not seen before constant expression
-   87 0000007a  cmp R5, z
+   87 00000092  MOV R3,q; Booth Bit
                        ^
-"booth_algo.s", line 92 (column 15): Warning: A1865W: '#' not seen before constant expression
-   92 00000082  sub R10, R10, 1
-                             ^
-"booth_algo.s", line 93 (column 10): Warning: A1865W: '#' not seen before constant expression
-   93 00000086  cmp R10, 0
+"booth_algo.s", line 88 (column 9): Warning: A1865W: '#' not seen before constant expression
+   88 00000096  MOV R4, M; Mulitplicand
+                       ^
+"booth_algo.s", line 89 (column 10): Warning: A1865W: '#' not seen before constant expression
+   89 0000009a  MOV R10, N; Count
                         ^
-0 Errors, 22 Warnings
+"booth_algo.s", line 94 (column 9): Warning: A1865W: '#' not seen before constant expression
+   94 0000009e  cmp R1, 0
+                       ^
+"booth_algo.s", line 95 (column 13): Warning: A1865W: '#' not seen before constant expression
+   95 000000a0  add R5, PC, 2; gettin address of next instruction pointer
+                           ^
+"booth_algo.s", line 98 (column 9): Warning: A1865W: '#' not seen before constant expression
+   98 000000a6  cmp R2, 0
+                       ^
+"booth_algo.s", line 99 (column 13): Warning: A1865W: '#' not seen before constant expression
+   99 000000a8  add R5, PC, 2
+                           ^
+"booth_algo.s", line 104 (column 9): Warning: A1865W: '#' not seen before constant expression
+  104 000000b2  cmp R5, y; r5 is Qo_Q-1
+                       ^
+"booth_algo.s", line 107 (column 9): Warning: A1865W: '#' not seen before constant expression
+  107 000000b6  cmp R5, z
+                       ^
+"booth_algo.s", line 112 (column 15): Warning: A1865W: '#' not seen before constant expression
+  112 000000be  sub R10, R10, 1
+                             ^
+"booth_algo.s", line 113 (column 10): Warning: A1865W: '#' not seen before constant expression
+  113 000000c2  cmp R10, 0
+                        ^
+"booth_algo.s", line 118 (column 13): Warning: A1865W: '#' not seen before constant expression
+  118 000000cc  and R1, R8, 1; checking MSB
+                           ^
+"booth_algo.s", line 119 (column 9): Warning: A1865W: '#' not seen before constant expression
+  119 000000d0  cmp R1, 1
+                       ^
+0 Errors, 31 Warnings
 assembling booth_algo.s...
 linking...
 .\Objects\booth.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
