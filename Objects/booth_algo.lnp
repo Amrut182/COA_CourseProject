@@ -1,8 +1,8 @@
 --cpu Cortex-M3
-".\objects\booth_algo.o"
+".\objects\booth_algo1.o"
 ".\objects\startup_lpc17xx.o"
 ".\objects\system_lpc17xx.o"
---strict --scatter ".\Objects\booth.sct"
+--strict --scatter ".\Objects\booth_algo.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list ".\Listings\booth.map" -o .\Objects\booth.axf
+--list ".\Listings\booth_algo.map" -o .\Objects\booth_algo.axf

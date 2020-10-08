@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.31.0.0
 Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Biju Amruta Dathan, Indian Institute of Technology. Dharwad, LIC=----
+License Information: Biju Amrut, iit dharwad, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.31.0.0
-Toolchain Path:  D:\arm-stuff\ARM\ARMCLANG\Bin
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
 C Compiler:      ArmClang.exe V6.14
 Assembler:       Armasm.exe V6.14
 Linker/Locator:  ArmLink.exe V6.14
@@ -21,13 +21,19 @@ Target DLL:      UL2CM3.DLL V1.163.4.0
 Dialog DLL:      TARMP1.DLL V1.26.0.0
  
 <h2>Project:</h2>
-D:\ARM_CODE\New folder\courseProj\booth.uvprojx
-Project File Date:  10/06/2020
+C:\Users\Amrut Biju\Documents\ARM\booth\booth_algo.uvprojx
+Project File Date:  10/08/2020
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.14', folder: 'D:\arm-stuff\ARM\ARMCLANG\Bin'
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-".\Objects\booth.axf" - 0 Error(s), 0 Warning(s).
+assembling booth_algo1.s...
+linking...
+.\Objects\booth_algo.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+Program Size: Code=564 RO-data=204 RW-data=0 ZI-data=512  
+Finished: 0 information, 1 warning and 0 error messages.
+FromELF: creating hex file...
+".\Objects\booth_algo.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -46,8 +52,8 @@ Package Vendor: Keil
 <h2>Collection of Component include folders:</h2>
   .\RTE\Device\LPC1768
   .\RTE\_Target_1
-  D:\arm-stuff\ARM\CMSIS\5.7.0\CMSIS\Core\Include
-  D:\arm-stuff\Keil\LPC1700_DFP\2.6.0\Device\Include
+  C:\Users\Amrut Biju\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\Amrut Biju\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
@@ -55,10 +61,10 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:1.0.0
       Include file:  Device\Include\LPC17xx.h
-      Include file:  RTE_Driver\Config\RTE_Device.h
-      Source file:   Device\Source\ARM\startup_LPC17xx.s
       Source file:   Device\Source\system_LPC17xx.c
-Build Time Elapsed:  00:00:00
+      Source file:   Device\Source\ARM\startup_LPC17xx.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

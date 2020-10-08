@@ -119,6 +119,7 @@ CRP_Key         DCD     0xFFFFFFFF
 
                 AREA    |.text|, CODE, READONLY
 				IMPORT __START
+					
 
 ; Reset Handler
 
@@ -128,7 +129,7 @@ Reset_Handler   PROC
                 ;IMPORT  __main
                 ;LDR     R0, =SystemInit
                 ;BLX     R0
-                LDR     R0, =__START
+                LDR     R0,=__START
                 BX      R0
                 ENDP
 
@@ -269,8 +270,8 @@ CANActivity_IRQHandler
 
                 ELSE
 
-                ;IMPORT  __use_two_region_memory
-                ;EXPORT  __user_initial_stackheap
+                ; IMPORT  __use_two_region_memory
+                ; EXPORT  __user_initial_stackheap
 __user_initial_stackheap
 
                 LDR     R0, =  Heap_Mem
